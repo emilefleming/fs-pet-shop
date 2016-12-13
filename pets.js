@@ -30,7 +30,7 @@ if (cmd === 'read') {
       console.log(petDb);
       process.exit(0);
     }
-    else if (index == parseInt(index) && index > -1) { // eslint-disable-line
+    if (index == parseInt(index) && index > -1) { // eslint-disable-line
       if (!petDb[index]) {
         console.error(`No entry found at index ${index}`);
         process.exit(1);
@@ -38,10 +38,8 @@ if (cmd === 'read') {
       console.log(petDb[index]);
       process.exit(0);
     }
-    else {
-      console.error(`Usage: ${node} ${file} ${cmd} INDEX`);
-      process.exit(1);
-    }
+    console.error(`Usage: ${node} ${file} ${cmd} INDEX`);
+    process.exit(1);
   });
 }
 else if (cmd === 'create') {
